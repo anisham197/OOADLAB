@@ -19,6 +19,7 @@ import java.util.*;
  */
 public class SummarizeName implements NameList {
 
+    //summarizes contact list according to name of employess
     ArrayList<String> detail = new ArrayList<>();;
     String[] name;
     
@@ -58,6 +59,9 @@ import java.util.*;
 
 public class SummarizeOrganization implements NameList {
 
+    //summarizes contact list according to name of organization
+    
+    //mydhili maam said no need to implement this
     public SummarizeOrganization() {
     }
 
@@ -100,6 +104,7 @@ public abstract class Contact {
 
     public void addDetail(String s1, String s2) {
         // TODO implement here
+        //arraylist to store employee name and organization name
         ArrayList<String> al= new ArrayList<>();
         al.add(s1);
         al.add(s2);
@@ -169,6 +174,7 @@ public class Client {
    {
 
        Contact a = new ContactList1();
+        //name of employee and organization name
        a.addDetail("Ram", "Piper");
        a.addDetail("John","Company");
        a.addDetail("Suresh","Company2");
