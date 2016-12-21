@@ -17,7 +17,7 @@ public class setstrategy{
     public setstrategy(strategies strategy){
         this.strategy=strategy;
     }
-    public void execue(ArrayList<contact> c){
+    public void execute(ArrayList<contact> c){
         strategy.summarize(c);
     }
 }
