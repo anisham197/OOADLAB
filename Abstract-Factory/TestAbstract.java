@@ -83,16 +83,6 @@ class IndiaContactFactory implements ContactFactory{
 	}
 }
 
-class IndianContactFactory implements ContactFactory{
-	public Address getAddress(){
-		return new IndianAddress();
-	}
-	public PhoneNumber getPhoneNumber(int code)
-	{
-		return new IndianPhoneNumber(code);
-	}
-}
-
 public class TestAbstract{
 	public static void main(String[] args) {
 		//Address US = new USAddress;
