@@ -2,7 +2,9 @@ import java.util.*;
 
 abstract class Address{
 	String door,street,area,city,state;
+
 	abstract void getFullAddress();
+
 	void setAddress(String door,String street, String area,String city,String state){
 		this.door=door;
 		this.street=street;
@@ -13,40 +15,24 @@ abstract class Address{
 }
 
 class USAddress extends Address{
-	String sp=" ",nl="\n"; 
-	USAddress(){}
-	USAddress(String door,String street, String area,String city,String state){
-				this.door=door;
-		this.street=street;
-		this.area=area;
-		this.city=city;
-		this.state=state;
-	}
+	String sp = " ", nl = "\n";
+
 	void getFullAddress(){
-		System.out.println(door+sp+street+sp+nl+area+sp+city+nl+state);
+		System.out.println(door+sp+street+sp+nl+area+sp+city+nl+state+nl+"United States of America");
 	}
 }
 
 class IndianAddress extends Address{
-	String sp=" ",nl="\n"; 
-	IndianAddress(String door,String street, String area,String city,String state){
-				this.door=door;
-		this.street=street;
-		this.area=area;
-		this.city=city;
-		this.state=state;
-	}
+		String sp = " ", nl = "\n";
+
 	void getFullAddress(){
-		System.out.println(door+sp+street+sp+nl+area+sp+city+nl+state);
+		System.out.println(door+sp+street+sp+nl+area+sp+city+nl+state+nl+"India");
 	}
 }
 
 abstract class PhoneNumber{
-	int code; 
 	long phone;
-	PhoneNumber(int code){
-		this.code=code;
-	}
+
 	abstract void getPno();
 	void setPno(long phone){
 		this.phone = phone;
@@ -54,34 +40,39 @@ abstract class PhoneNumber{
 }
 
 class USPhoneNumber extends PhoneNumber{
-	USPhoneNumber(int code){
-		super(code);
-	}
+
 	void getPno(){
-		System.out.print(code+" "+phone);
+		System.out.println("" + 1054 + " "+phone);
 	}
 }
 
 class IndianPhoneNumber extends PhoneNumber{
-	IndianPhoneNumber(int code){
-		super(code);
-	}
+
 	void getPno(){
-		System.out.print(code+" "+phone);
+		System.out.println("" + 91 + " "+phone);
 	}
 }
 
 interface ContactFactory{
 	Address getAddress();
-	PhoneNumber getPhoneNumber(int code);
+	PhoneNumber getPhoneNumber();
 }
 
 class USContactFactory implements ContactFactory{
 	public Address getAddress(){
 		return new USAddress();
 	}
-	public PhoneNumber getPhoneNumber(int code){
-		return new USPhoneNumber(code);
+	public PhoneNumber getPhoneNumber(){
+		return new USPhoneNumber();
+	}
+}
+
+class IndiaContactFactory implements ContactFactory{
+	public Address getAddress(){
+		return new IndianAddress();
+	}
+	public PhoneNumber getPhoneNumber(){
+		return new IndianPhoneNumber();
 	}
 }
 
@@ -90,11 +81,20 @@ public class TestAbstract{
 		//Address US = new USAddress;
 		ContactFactory uscf = new USContactFactory();
 		Address usa = uscf.getAddress();
-		PhoneNumber uspn = uscf.getPhoneNumber(1054);
+		PhoneNumber uspn = uscf.getPhoneNumber();
 
-		usa.setAddress("54", "MG road", "Mathikere", "Seattle", "California");
+		usa.setAddress("54", "MGM Boulevard", "15th Avenue", "Seattle", "California");
 		usa.getFullAddress();
 		uspn.setPno(988665263);
 		uspn.getPno();
+
+		ContactFactory incf = new IndiaContactFactory();
+		Address ina = incf.getAddress();
+		PhoneNumber inpn = incf.getPhoneNumber();
+
+		ina.setAddress("54", "MG road", "Mathikere", "Bangalore", "Karnataka");
+		ina.getFullAddress();
+		inpn.setPno(988665263);
+		inpn.getPno();
 	}
 }
