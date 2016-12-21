@@ -40,7 +40,7 @@ public class Appointment implements Editable {
          * 
          */
         public String display() {            
-            return "Appointed with "+name+" on " + date+ " at " +time+ " created.";
+            return "Appointment with "+name+" on " + date+ " at " +time+ " created.";
         }
 
     }

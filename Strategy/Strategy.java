@@ -12,7 +12,6 @@ public interface NameList {
 }
 
 
-import java.util.*;
 
 /**
  *
@@ -55,7 +54,7 @@ public class SummarizeName implements NameList {
 
 
 
-import java.util.*;
+
 
 public class SummarizeOrganization implements NameList {
 
@@ -80,7 +79,6 @@ public class SummarizeOrganization implements NameList {
 
 
 
-import java.util.*;
 
 public abstract class Contact {
 
@@ -117,7 +115,7 @@ public abstract class Contact {
 
 
 
-import java.util.*;
+
 
 public class ContactList1 extends Contact {
 
@@ -140,8 +138,6 @@ public class ContactList1 extends Contact {
 
 
 
-import java.util.*;
-
 public class ContactList2 extends Contact {
     static NameList nam = new SummarizeOrganization();
  
@@ -160,9 +156,6 @@ public class ContactList2 extends Contact {
 
 }
 
-
-
-import java.util.*;
 
 public class Client {
 

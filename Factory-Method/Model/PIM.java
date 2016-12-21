@@ -17,9 +17,7 @@ public class PIM {
     {
         items = new ArrayList<>();
     }
-    /**
-     * @param item
-     */
+
     public void addItem(Editable item) {
         ItemEditor editor = item.getEditor();
         editor.getInput();        
