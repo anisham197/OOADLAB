@@ -9,5 +9,8 @@ public class PIMTester {
         myData.addItem( new Address() );
         myData.addItem( new Appointment() );
         myData.show();
+        myData.updateItem(1);
+        myData.updateItem(2);
+        myData.show();
 }
 }
