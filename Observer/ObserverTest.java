@@ -13,7 +13,7 @@ class ClubMeeting implements Subject {
 
 	public ClubMeeting() {
 		memberList = new ArrayList<>();
-    ap = new Appointment();
+    	ap = new Appointment();
 	}
 
  public void attach(Observer o) {
@@ -32,7 +32,7 @@ class ClubMeeting implements Subject {
 	}
 
 	public void setTheAppointment(String location, String date, String time){
-    ap.setAppointment(location, date, time);
+    	ap.setAppointment(location, date, time);
 		notifyObserver();
 	}
 

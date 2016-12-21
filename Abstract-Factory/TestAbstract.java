@@ -23,12 +23,13 @@ class USAddress extends Address{
 		this.state=state;
 	}
 	void getFullAddress(){
-		System.out.println(door+sp+street+sp+nl+area+sp+city+nl+state);
+		System.out.println(door+sp+street+sp+nl+area+sp+city+nl+state+",USA");
 	}
 }
 
 class IndianAddress extends Address{
-	String sp=" ",nl="\n"; 
+	String sp=" ",nl="\n";
+	IndianAddress(){} 
 	IndianAddress(String door,String street, String area,String city,String state){
 				this.door=door;
 		this.street=street;
@@ -37,7 +38,7 @@ class IndianAddress extends Address{
 		this.state=state;
 	}
 	void getFullAddress(){
-		System.out.println(door+sp+street+sp+nl+area+sp+city+nl+state);
+		System.out.println(door+sp+street+sp+nl+area+sp+city+nl+state+",India");
 	}
 }
 
@@ -58,7 +59,7 @@ class USPhoneNumber extends PhoneNumber{
 		super(code);
 	}
 	void getPno(){
-		System.out.print(code+" "+phone);
+		System.out.print("+1-"+code+" "+phone);
 	}
 }
 
@@ -67,7 +68,7 @@ class IndianPhoneNumber extends PhoneNumber{
 		super(code);
 	}
 	void getPno(){
-		System.out.print(code+" "+phone);
+		System.out.print("+91-"+code+" "+phone);
 	}
 }
 
@@ -82,6 +83,16 @@ class USContactFactory implements ContactFactory{
 	}
 	public PhoneNumber getPhoneNumber(int code){
 		return new USPhoneNumber(code);
+	}
+}
+
+class IndianContactFactory implements ContactFactory{
+	public Address getAddress(){
+		return new IndianAddress();
+	}
+	public PhoneNumber getPhoneNumber(int code)
+	{
+		return new IndianPhoneNumber(code);
 	}
 }
 

@@ -32,15 +32,19 @@ class ChocolateBoiler {
 		boiled = false;
 	}
 
+	private static class BoilerHousing {
+		private static final ChocolateBoiler INSTANCE = new ChocolateBoiler();
+	}
+
 	public static ChocolateBoiler getInstance() {
-		if (uniqueInstance == null) {
-			System.out.println("Creating unique instance of Chocolate Boiler");
-			uniqueInstance = new ChocolateBoiler();
-		}
-		else {
-			System.out.println("Returning instance of Chocolate Boiler");
-		}
-		return uniqueInstance;
+		// if (uniqueInstance == null) {
+		// 	System.out.println("Creating unique instance of Chocolate Boiler");
+		// 	uniqueInstance = new ChocolateBoiler();
+		// }
+		// else {
+		// 	System.out.println("Returning instance of Chocolate Boiler");
+		// }
+		return BoilerHousing.INSTANCE;
 	}
 
 	public void fill() {
