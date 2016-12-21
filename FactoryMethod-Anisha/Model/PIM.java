@@ -16,6 +16,12 @@ public class PIM {
         items.add(item); // Adding to Array List
     }
 
+    public void updateItem(int i) {
+        Editable item = items.get(i - 1);
+        ItemEditor editor = item.getEditor(); // Factory Method
+        editor.getInput(); // Adding to Array List
+    }
+
     public void show()
     {
         for (Editable item : items) {
