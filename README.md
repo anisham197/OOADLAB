@@ -1,3 +1,3 @@
-# OOADLAB
+# Object Oriented Analysis and Design Patterns Lab
 
-Contains OOAD Lab Programs with UML Diagrams
+Contains code for OOADP Lab Programs with UML Diagrams, Ramaiah Institute of Technology
